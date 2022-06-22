@@ -26,3 +26,21 @@
   
   return root;
 };
+
+
+//BFS
+var invertTree = function(root) {
+  if(!root) return null;
+  let queue = [root];
+
+  while(queue.length) {
+      let node = queue.shift();
+      if(node) {
+         [node.left, node.right] = [node.right, node.left];
+         queue.push(node.left);
+         queue.push(node.right);
+      }
+  }
+  return root;
+};
+
