@@ -12,7 +12,6 @@
  */
  var isBalanced = function(root) {
   const depth = (node) => {
-      // if Left side > right side by more than 1 return false and vice verca
       
       if (!node) {
           return 0;
@@ -23,9 +22,6 @@
       
       return Math.max(countLeft, countRight);
   }
-  // recursion?
-  // base case;
-  // keeping track of level somehow?
   
   if (!root) {
       return true;
@@ -40,6 +36,4 @@
   
   return isBalanced(root.left) && isBalanced(root.right);
 
-  
-  
 };
