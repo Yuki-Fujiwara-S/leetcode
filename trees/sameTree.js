@@ -24,9 +24,7 @@
   if (p.val !== q.val) {
       return false;
   }
-    
-  // need to return true when done checking all nodes - how to use recursion majik?
-  // does if !p and !q case work for returning true; 
+
   let leftCheck = isSameTree(p.left, q.left); 
   let rightCheck = isSameTree(p.right, q.right);
   
