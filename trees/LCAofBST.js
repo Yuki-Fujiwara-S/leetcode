@@ -16,9 +16,6 @@
  var lowestCommonAncestor = function(root, p, q) {
   // ask clarifying questions - constraints
   
-  // store values?
-  // Use bounds?
-  
   if (!root) {
       return null;
   }
