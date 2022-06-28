@@ -13,9 +13,7 @@
  */
 
  var isSubtree = function(root, subRoot) {
-  // traverse root
-  // use null property at the end to check equality
-  
+   
   if(!root) {
       return false;
   }
@@ -44,9 +42,6 @@ var isSameTree = function(p, q) {
   if (p.val !== q.val) {
       return false;
   }
-    
-  // need to return true when done checking all nodes - how to use recursion majik?
-  // does if !p and !q case work for returning true; 
   let leftCheck = isSameTree(p.left, q.left); 
   let rightCheck = isSameTree(p.right, q.right);
   
