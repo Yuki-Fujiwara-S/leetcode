@@ -7,7 +7,8 @@
 // Time complexity
 //
 
-// An Example
+// An Example, add up to n
+// time complexity O(n)
 
 
 function addUpto(n) {
