@@ -15,3 +15,26 @@
  * @return {number}
  */
 
+ var goodNodes = function(root) {
+  // counter?
+  // current highest?
+  // recursion babu?
+  
+  let count = 0;
+  const checkGood = (node, highest) => {        
+      if (!node) {
+          return;
+      }
+      if (highest <= node.val ) {
+          highest = node.val;
+          count += 1;
+      }
+      checkGood(node.left, highest);
+      checkGood(node.right, highest);
+  }
+  
+  checkGood(root, root.val);
+  
+  return count;
+      
+};
