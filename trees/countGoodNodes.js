@@ -16,10 +16,7 @@
  */
 
  var goodNodes = function(root) {
-  // counter?
-  // current highest?
-  // recursion babu?
-  
+ 
   let count = 0;
   const checkGood = (node, highest) => {        
       if (!node) {
