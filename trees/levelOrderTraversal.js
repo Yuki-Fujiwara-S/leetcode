@@ -15,7 +15,6 @@
  */
 
  var levelOrder = function(root) {
-  // left and right  
   if (!root) {
       return [];
   }
