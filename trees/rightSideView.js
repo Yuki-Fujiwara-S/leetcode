@@ -12,3 +12,34 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+
+ var rightSideView = function(root) {
+    
+  if (!root) {
+      return [];
+  }
+  
+  let queue = [root];
+  let result = [];
+  
+  while (queue.length) {
+      let queueSize = queue.length;
+      
+      for (let i = 0; i < queueSize; i++){
+          let elm = queue.shift();
+          if (i === queueSize - 1) {
+              result.push(elm.val);
+          }
+          if (elm.left) {
+              queue.push(elm.left);
+          }
+          
+          if (elm.right) {
+              queue.push(elm.right);
+          }
+      }
+  }
+  
+  return result;
+  
+};
