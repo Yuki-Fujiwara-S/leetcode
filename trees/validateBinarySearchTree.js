@@ -21,7 +21,6 @@
  */
 
  var isValidBST = function(root) {
-  // instinct says recursion 
   const isValid = (node, smaller, greater) => {   
  
       if (!node) {
