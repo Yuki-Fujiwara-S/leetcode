@@ -19,3 +19,28 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+
+ var isValidBST = function(root) {
+  // instinct says recursion 
+  const isValid = (node, smaller, greater) => {   
+ 
+      if (!node) {
+          return true;
+      }
+      
+      if (node.val <= smaller) {
+          return false;
+      }
+      
+      if (node.val >= greater) {
+          return false;
+      }
+      
+      let left = isValid(node.left, smaller, node.val);
+      let right = isValid(node.right, node.val, greater);
+      
+      return left && right;
+  }
+  
+  return isValid(root, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);    
+};
