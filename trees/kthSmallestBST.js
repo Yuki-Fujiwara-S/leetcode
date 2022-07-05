@@ -59,3 +59,22 @@ const dfs = (root, res) => {
   res.push(root.val);
   dfs(root.right, res);
 }
+
+
+// Another optimised solution
+
+var kthSmallest = function(root, k) {    
+	let smallest=Infinity; 
+	let count=0     
+	const helper =(root, k) =>{        
+		if(!root) return;                
+			helper(root.left, k);         
+		if(count<k){ 		    
+			count+=1             
+			smallest=root.val;        
+		}         
+		helper(root.right, k);         
+	}             
+	helper(root, k, 0);     
+	return smallest      
+};
