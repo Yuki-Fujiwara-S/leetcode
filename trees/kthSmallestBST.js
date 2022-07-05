@@ -15,7 +15,7 @@
  * @return {number}
  */
  var kthSmallest = function(root, k) {
-   
+
   let counter = 0;
   let result = 0;
   
@@ -40,3 +40,22 @@
   
   
 };
+
+
+// Another solution using in-order traversal
+var kthSmallest = function(root, k) {
+  let res = [];
+  dfs(root, res);
+  return res[k - 1];
+// T.C: O(N)
+// S.C: O(N)
+};
+
+const dfs = (root, res) => {
+  if (!root) {
+      return;
+  }
+  dfs(root.left, res);
+  res.push(root.val);
+  dfs(root.right, res);
+}
