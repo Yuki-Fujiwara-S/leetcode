@@ -15,14 +15,7 @@
  * @return {number}
  */
  var kthSmallest = function(root, k) {
-  // a tree is something found in the forest with green leaves, they have roots, its called I think
-  // think of the traversals
-  // want to check 
-  
-  // left, root, right
-  
-  // recurse all the way to bottom left, then start traversing in-order left, root, right k times?
-  // where counter is dictates traversal type
+   
   let counter = 0;
   let result = 0;
   
