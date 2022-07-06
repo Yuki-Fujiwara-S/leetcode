@@ -17,8 +17,6 @@
 
 var buildTree = function(preorder, inorder) {
 
-  // root of entire tree will always be first element in pre order
-  // in example 1, if 9 is on the left of 3 in in-order it will be on the left of three, and if not it will be on right
   if (inorder.length === 0) {
       return null;
   }
