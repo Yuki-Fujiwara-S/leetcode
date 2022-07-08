@@ -6,3 +6,68 @@
 
 // Clarification: The input/output format is the same as how LeetCode serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
 
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+
+/**
+ * Encodes a tree to a single string.
+ *
+ * @param {TreeNode} root
+ * @return {string}
+ */
+ var serialize = function(root) {
+  // come up with our own rules?
+  // keep track of level with counter?
+  let string = "";
+  
+  const buildString = (node) => {
+      if (!node) {
+          string += "x ";
+      } else {
+          string += node.val + " ";
+          buildString(node.left);
+          buildString(node.right);
+      }
+
+  }
+  
+  buildString(root);
+ 
+  return string;    
+};
+
+
+
+/**
+* Decodes your encoded data to tree.
+*
+* @param {string} data
+* @return {TreeNode}
+*/
+var deserialize = function(data) {
+  let arr = data.split(" ");
+  
+  const buildTree = () => {
+      let val = arr.shift();
+      if (val === "x"){
+          return null;
+      }
+      let node = new TreeNode(Number(val));
+      node.left = buildTree();
+      node.right = buildTree();
+      return node;
+  }
+  
+  return buildTree();
+};
+
+/**
+* Your functions will be called as such:
+* deserialize(serialize(root));
+*/
