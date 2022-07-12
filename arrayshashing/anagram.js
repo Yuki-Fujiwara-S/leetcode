@@ -50,3 +50,5 @@
   
 };
 
+// can also solve using one map and adding for one loop and subtracting for the other
+
