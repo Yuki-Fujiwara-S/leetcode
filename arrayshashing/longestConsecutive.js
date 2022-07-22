@@ -4,8 +4,6 @@
 
 // no O(n) solution , nlog(n)
 // var longestConsecutive = function(nums) {
-//     // can see screen
-//     // 
 //     // check longest
 //     if (nums.length === 0) {
 //         return 0;
