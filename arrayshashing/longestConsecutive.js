@@ -36,7 +36,6 @@
 // };
 
 var longestConsecutive = function(nums) {
-  // O (n) 
   if (nums.length === 0) {
       return 0;
   }
