@@ -34,3 +34,33 @@
 //     return largestsofar > counter ? largestsofar : counter;
 
 // };
+
+var longestConsecutive = function(nums) {
+  // O (n) 
+  if (nums.length === 0) {
+      return 0;
+  }
+  
+  let numsSet = [... new Set(nums)]
+  let set = new Set(nums);
+  let largestSoFar = 1;
+  
+  for (let i = 0; i < numsSet.length; i++) {
+      if (set.has(numsSet[i] - 1)) {
+          continue;
+      }
+      let currentNum = numsSet[i];
+      let counter = 1;
+      while (set.has(currentNum + 1)) {
+          counter += 1;
+          currentNum += 1;
+      }
+      if (largestSoFar < counter) {
+          largestSoFar = counter;
+      }
+  }
+  
+  return largestSoFar;
+  
+  
+}
