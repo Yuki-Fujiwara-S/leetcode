@@ -6,3 +6,25 @@
 
 // Your solution must use only constant extra space.
 
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+ var twoSum = function(numbers, target) {
+  let start = 0;
+  let end = numbers.length - 1;
+  
+  
+  while (start < end) {
+      let numsum = numbers[start] + numbers[end];
+      if (numsum === target) {
+          return [start + 1, end + 1];   
+      } else if (numsum > target) {
+          end--;
+      } else {
+          start++;
+      }
+  }
+  
+};
