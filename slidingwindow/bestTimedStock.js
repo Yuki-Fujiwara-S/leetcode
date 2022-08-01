@@ -9,9 +9,7 @@
  * @return {number}
  */
  var maxProfit = function(prices) {
-  // what i s a s l i d i n g window
-  // what is mcFred
-  // [2, 1000, 1, 3, 4, 6]
+ 
   
   let profitSoFar = 0;
   
