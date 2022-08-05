@@ -10,9 +10,6 @@
  * @return {boolean}
  */
  var isValid = function(s) {
-  // Queue - FIFO
-  // Stack - LIFO
-  // pop off anything from the stack
       
   let stack = [];
   
