@@ -6,3 +6,15 @@
 
 // It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
 
+/**
+ * @param {string[]} tokens
+ * @return {number}
+ */
+ var evalRPN = function(tokens) {
+  let stack = [];
+  let totalSoFar = 0;
+  
+  //lhs rhs?
+  
+  
+};
