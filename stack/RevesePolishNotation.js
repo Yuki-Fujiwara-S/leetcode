@@ -6,58 +6,33 @@
 
 // It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
 
-/**
- * @param {string[]} tokens
- * @return {number}
- */
- var evalRPN = function(tokens) {
+var evalRPN = function(tokens) {
   let stack = [];
-  let totalSoFar = 0;
-  let first = true;
-  
-  //lhs rhs?
-  for (let i = 0; i < tokens.length; i++) {
-      // ADDITION
-      if (tokens[i] === "+") {
-         if (first) {
-             totalSoFar = stack.pop() + stack.pop();
-             first = false;
-         } else {
-             totalSoFar += stack.pop();
-         }
-          continue;   
+  let operators = {
+      "+": function(a,b) {
+          return a + b;
+      },
+      "-": function(a,b) {
+          return a - b;
+      },
+      "/": function(a,b) {
+          return Math.trunc(a / b);
+      },
+      "*": function(a,b) {
+          return a * b;
       }
-      
-      // SUBTRACTION
-      if (tokens[i] === "-") {
-         if (first) {
-             tokenOne = stack.pop();
-             tokenTwo = stack.pop();
-             totalSoFar = tokenOne - tokenTwo;
-             first = false;
-         } else {
-             totalSoFar = stack.pop() - totalSoFar;
-         }
-          continue;   
-      }
-      
-      // MULTIPLICATION
-      if (tokens[i] === "*") {
-         if (first) {
-             totalSoFar = stack.pop() * stack.pop();
-             first = false;
-         } else {
-             totalSoFar *= stack.pop();
-         }
-          continue;   
-      }
-      
-      
-      
-      // push to stack
-      stack.push(tokens[i]);
   }
   
-  return totalSoFar;
+  for (let i =  0; i < tokens.length; i++) {
+      if (tokens[i] in operators) {
+          let first = stack.pop();
+          let next = stack.pop();
+          
+          stack.push(operators[tokens[i]](next, first))
+      } else {
+          stack.push(Number(tokens[i]));
+      }
+  }
   
+  return stack[0];
 };
