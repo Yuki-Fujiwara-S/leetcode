@@ -1,6 +1,6 @@
 // Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 
-// Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
+// Valid OPERATORS are +, -, *, and /. Each operand may be an integer or another expression.
 
 // Note that division between two integers should truncate toward zero.
 
@@ -8,27 +8,19 @@
 
 var evalRPN = function(tokens) {
   let stack = [];
-  let operators = {
-      "+": function(a,b) {
-          return a + b;
-      },
-      "-": function(a,b) {
-          return a - b;
-      },
-      "/": function(a,b) {
-          return Math.trunc(a / b);
-      },
-      "*": function(a,b) {
-          return a * b;
-      }
+  let OPERATORS = {
+      "+": (a,b) => a + b,
+      "-": (a,b) => a - b,
+      "/": (a,b) => Math.trunc(a / b),
+      "*": (a,b) => a * b
   }
   
   for (let i =  0; i < tokens.length; i++) {
-      if (tokens[i] in operators) {
+      if (tokens[i] in OPERATORS) {
           let first = stack.pop();
           let next = stack.pop();
           
-          stack.push(operators[tokens[i]](next, first))
+          stack.push(OPERATORS[tokens[i]](next, first))
       } else {
           stack.push(Number(tokens[i]));
       }
