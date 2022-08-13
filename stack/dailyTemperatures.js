@@ -29,3 +29,28 @@
 };
 
 // Alternate solution using stack
+
+/**
+ * @param {number[]} temperatures
+ * @return {number[]}
+ */
+ var dailyTemperatures = function(temperatures) {
+    
+  let result = Array(temperatures.length).fill(0);
+  
+  // array of arrays with [temp, index]
+  // Ryan the Temp
+  let stack = [];
+  
+  for (let i = 0; i < temperatures.length; i++) {
+      while (stack.length !== 0 && temperatures[i] > stack[stack.length - 1][0]) {
+          let stackTemp, stackIndex;
+          [stackTemp, stackIndex] = stack.pop();
+          result[stackIndex] = i - stackIndex;
+      }
+      stack.push([temperatures[i], i]);
+  }
+  
+  return result;
+  
+};
