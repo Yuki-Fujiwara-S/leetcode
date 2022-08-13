@@ -27,3 +27,5 @@
   
   return stack;
 };
+
+// Alternate solution using stack
