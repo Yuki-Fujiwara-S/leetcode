@@ -38,8 +38,6 @@
     
   let result = Array(temperatures.length).fill(0);
   
-  // array of arrays with [temp, index]
-  // Ryan the Temp
   let stack = [];
   
   for (let i = 0; i < temperatures.length; i++) {
