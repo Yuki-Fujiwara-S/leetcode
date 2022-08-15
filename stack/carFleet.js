@@ -10,4 +10,26 @@
 
 // Return the number of car fleets that will arrive at the destination.
 
- 
+ /**
+ * @param {number} target
+ * @param {number[]} position
+ * @param {number[]} speed
+ * @return {number}
+ */
+var carFleet = function(target, position, speed) {
+    
+    
+  // array of arrays perhaps?
+  let stack = [];
+  
+  
+  // while loop until the last car reaches the target?
+  
+  for (let i = 0; i < position.length; i++) {
+      
+      //
+      
+  }
+  
+  
+};
