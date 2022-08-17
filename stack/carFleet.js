@@ -25,7 +25,7 @@
  var carFleet = function(target, position, speed) {
     
   let pair = [];
-  // array of arrays perhaps
+  
   for (let i = 0; i < position.length; i++) {
       pair.push([position[i], speed[i]]);
   }
@@ -34,14 +34,12 @@
      return b[0] - a[0]; 
   });
   
-  console.log(sorted);
   
   
   let stack = [];
   
   for (let i = 0; i < sorted.length; i++) {
       let arrivalTime = (target - sorted[i][0]) / sorted[i][1];
-      console.log(arrivalTime)
       stack.push(arrivalTime);
       if (stack.length >= 2 && stack[stack.length - 1] <= stack[stack.length - 2]) {
           stack.pop();
