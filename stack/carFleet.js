@@ -16,20 +16,40 @@
  * @param {number[]} speed
  * @return {number}
  */
-var carFleet = function(target, position, speed) {
+/**
+ * @param {number} target
+ * @param {number[]} position
+ * @param {number[]} speed
+ * @return {number}
+ */
+ var carFleet = function(target, position, speed) {
     
-    
-  // array of arrays perhaps?
+  let pair = [];
+  // array of arrays perhaps
+  for (let i = 0; i < position.length; i++) {
+      pair.push([position[i], speed[i]]);
+  }
+  
+  let sorted = pair.sort((a, b) =>{
+     return b[0] - a[0]; 
+  });
+  
+  console.log(sorted);
+  
+  
   let stack = [];
   
-  
-  // while loop until the last car reaches the target?
-  
-  for (let i = 0; i < position.length; i++) {
-      
-      //
-      
+  for (let i = 0; i < sorted.length; i++) {
+      let arrivalTime = (target - sorted[i][0]) / sorted[i][1];
+      console.log(arrivalTime)
+      stack.push(arrivalTime);
+      if (stack.length >= 2 && stack[stack.length - 1] <= stack[stack.length - 2]) {
+          stack.pop();
+      }
   }
+  
+  return stack.length;
+  
   
   
 };
