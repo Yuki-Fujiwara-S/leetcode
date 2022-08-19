@@ -2,4 +2,15 @@
 
 // You must write an algorithm with O(log n) runtime complexity.
 
- 
+var search = function(nums, target) {
+  let [start, end] = [0, nums.length - 1];
+  
+  while (start < end){
+     
+  }
+  
+  return -1;
+  
+  
+  
+};
