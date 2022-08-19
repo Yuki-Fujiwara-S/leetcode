@@ -6,11 +6,14 @@ var search = function(nums, target) {
   let [start, end] = [0, nums.length - 1];
   
   while (start < end){
-     
+      let middle = Math.floor(end - start / 2);
+      let guess = nums[middle];
+      
+      if (guess === target) {
+          return middle;
+      }
+      
+      
   }
-  
   return -1;
-  
-  
-  
 };
