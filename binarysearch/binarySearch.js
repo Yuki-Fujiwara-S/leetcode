@@ -5,7 +5,7 @@
 var search = function(nums, target) {
   let [start, end] = [0, nums.length - 1];
   
-  while (start < end){
+  while (start <= end){
       let middle = Math.floor(end - start / 2);
       let guess = nums[middle];
       
@@ -13,7 +13,14 @@ var search = function(nums, target) {
           return middle;
       }
       
+      if (target < guess) {
+          end = middle - 1;
+      }
       
+      if (target > guess) {
+          start = middle + 1;
+      }
   }
+  
   return -1;
 };
