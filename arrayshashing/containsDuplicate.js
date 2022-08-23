@@ -24,4 +24,6 @@ const containsDuplicate = function(nums) {
   return false;
 }
 
+// you can use had method build in to set
+
 // can get away with a set
