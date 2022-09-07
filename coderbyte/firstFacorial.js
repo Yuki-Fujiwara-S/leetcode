@@ -1,3 +1,4 @@
+// solutions using for loop
 function FirstFactorial(num) {
   let result = 1;
 
@@ -5,7 +6,6 @@ function FirstFactorial(num) {
     result = result * i;
   }
 
-  // code goes here  
   return result; 
 
 }
