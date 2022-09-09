@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 function Toggle() {
-  const [clicked, setClicked] = useState()
+  const [clicked, setClicked] = useState(true);
   function handleClick() {
-    // todo
+    if (clicked) {
+      setClicked(false);
+    } else {
+      setClicked(true);
+    }
   }
   
   return (
-    <button>ON</button>
+    <div>
+    {clicked && <button onClick={handleClick}>ON</button> }
+    {!clicked && <button onClick={handleClick}>OFF</button> }
+    </div>
   );
 }
 
