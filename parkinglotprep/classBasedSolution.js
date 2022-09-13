@@ -1,4 +1,6 @@
 class ParkingLot {
+
+  //properties
   slots = [];
 
   constructor(parkingSize) {
