@@ -6,3 +6,5 @@
  
 //  Now, we learn that some riders are on wheelchairs. Each wheelchair requires two seats to be folded up on the bus when such a rider boards, and when the rider exits the bus those two seats become free again. We know ahead of time which riders will require wheelchairs. However, not every seat on a bus is foldable, and some buses have more foldable seats than others. How would you modify your solution to handle this functionality?
 
+
+
